@@ -118,12 +118,6 @@ tourSchema.index({ price: 1, ratingsAverage: -1 });
 tourSchema.index({ slug: 1 });
 tourSchema.index({ startLocation: '2dsphere' });
 
-/* dh 7l 34an 127.0.0.1:3000/api/v1/tours/top-5-cheap
-tourSchema.virtual('durationWeeks').get(function() {
-  if (this.duration == null) return next();
-  return this.duration / 7;
-}); 
-*/
 tourSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
 });
